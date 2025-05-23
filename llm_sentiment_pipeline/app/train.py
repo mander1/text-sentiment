@@ -15,7 +15,12 @@ small_test = dataset["test"].shuffle(seed=42).select(range(100))
 tokenizer = AutoTokenizer.from_pretrained("prajjwal1/bert-tiny")
 
 def tokenize_fn(example):
-    return tokenizer(example["text"], padding="max_length", truncation=True)
+    return tokenizer(
+        example["text"],
+        padding="max_length",
+        truncation=True,
+        max_length=128  # or 256 if you prefer
+    )
 
 train_dataset = small_train.map(tokenize_fn, batched=True)
 test_dataset = small_test.map(tokenize_fn, batched=True)
