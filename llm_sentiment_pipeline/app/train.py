@@ -8,8 +8,8 @@ print(transformers.__file__)
 
 # Load and prepare dataset
 dataset = load_dataset("yelp_polarity")
-small_train = dataset["train"].shuffle(seed=42).select(range(500))
-small_test = dataset["test"].shuffle(seed=42).select(range(100))
+small_train = dataset["train"].shuffle(seed=42).select(range(5000))
+small_test = dataset["test"].shuffle(seed=42).select(range(300))
 
 # Tokenize
 tokenizer = AutoTokenizer.from_pretrained("prajjwal1/bert-tiny")
@@ -33,7 +33,7 @@ training_args = TrainingArguments(
     output_dir="../models/distilbert-sentiment",
     evaluation_strategy="epoch",
     per_device_train_batch_size=8,
-    num_train_epochs=1,
+    num_train_epochs=2,
     save_total_limit=1,
     logging_dir="../logs",  # Optional: for TensorBoard
 )
