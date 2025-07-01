@@ -20,10 +20,10 @@ llm_sentiment_pipeline/
 │ ├── app/
 │ ├── train.py # Fine-tunes the sentiment classification model
 │ ├── gradio_app.py # Gradio interface for sentiment prediction
-│ ├── predict.py # (Optional) Script for command-line inference
+│ ├── predict.py # Script for command-line inference
 │ └── models/
 │ └── distilbert-sentiment/ # Saved model and tokenizer
-│ ├── README.md └── environment.yml # (Optional) Conda environment file
+│ ├── README.md
 ```
 
 ---
