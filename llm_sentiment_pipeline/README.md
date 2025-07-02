@@ -62,3 +62,10 @@ open your browser to: http://127.0.0.1:7860
 Input: 'I absolutely loved the experience and would recommend it to everyone!'
 
 Output: Positive: 94.6% / Negative: 5.4%
+
+## Model Evaluation
+
+Run the evaluation file to determine model accaccuracy
+
+Outputs a confusion matrix heatmap giving a visual representation of the models accaccuracy
+
